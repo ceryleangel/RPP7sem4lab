@@ -3,46 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multilingual Site</title>
+    <title>Multilingual Site - Choose Your Language</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="header">
-        <h1>🌐 MultiLanguage Site</h1>
-        <p>Выберите язык для просмотра сайта</p>
-    </div>
+    <div class="container">
+        <!-- Hero Section -->
+        <header class="hero fade-in">
+            <h1>🌐 MultiLanguage Platform</h1>
+            <p>Experience our website in your preferred language</p>
+        </header>
 
-    <div class="nav-menu">
-        <ul>
-            <li><a href="ru/" class="nav-button">🇷🇺 Русская версия</a></li>
-            <li><a href="eng/" class="nav-button">🇺🇸 English Version</a></li>
-        </ul>
-    </div>
+        <!-- Language Selection -->
+        <section class="nav-section">
+            <div class="nav-card fade-in">
+                <h2>🇷🇺 Русская Версия</h2>
+                <div class="lang-buttons">
+                    <a href="ru/" class="btn">
+                        📖 Открыть на русском
+                    </a>
+                    <a href="v1.0.0/ru/" class="btn btn-outline">
+                        ⏮️ Версия 1.0.0
+                    </a>
+                    <a href="v1.1.0/ru/" class="btn btn-outline">
+                        ⏮️ Версия 1.1.0
+                    </a>
+                    <a href="v1.2.0/ru/" class="btn btn-outline">
+                        ⏮️ Версия 1.2.0
+                    </a>
+                </div>
+            </div>
 
-    <div class="feature-list">
-        <h2>Что нового в версии 1.2.0:</h2>
-        <ul>
-            <li>🎨 Красивое оформление с CSS</li>
-            <li>📱 Адаптивный дизайн</li>
-            <li>🧭 Удобная навигация</li>
-            <li>🚀 Улучшенная производительность</li>
-        </ul>
-    </div>
+            <div class="nav-card fade-in">
+                <h2>🇺🇸 English Version</h2>
+                <div class="lang-buttons">
+                    <a href="eng/" class="btn">
+                        📖 Open in English
+                    </a>
+                    <a href="v1.0.0/eng/" class="btn btn-outline">
+                        ⏮️ Version 1.0.0
+                    </a>
+                    <a href="v1.1.0/eng/" class="btn btn-outline">
+                        ⏮️ Version 1.1.0
+                    </a>
+                    <a href="v1.2.0/eng/" class="btn btn-outline">
+                        ⏮️ Version 1.2.0
+                    </a>
+                </div>
+            </div>
+        </section>
 
-    <div class="version-info">
-        <strong>Версия:</strong> 1.2.0 | <strong>Дата:</strong> <span id="current-date"></span>
-    </div>
+        <!-- Features -->
+        <section class="content-grid">
+            <div class="feature-card fade-in">
+                <h2>🚀 Новые возможности</h2>
+                <ul class="feature-list">
+                    <li>Современный адаптивный дизайн</li>
+                    <li>Удобная навигация между версиями</li>
+                    <li>Поддержка multiple языков</li>
+                </ul>
+            </div>
+        </section>
 
-    <div class="version-list">
-        <h2>Доступные версии:</h2>
-        <ul>
-            <li><a href="v1.0.0/">Версия 1.0.0</a></li>
-            <li><a href="v1.1.0/">Версия 1.1.0</a></li>
-        </ul>
+        <div class="version-info fade-in">
+            <div>
+                <strong>Текущая версия:</strong>
+                <span class="version-badge">v2.0</span>
+            </div>
+            <div>
+                <strong>Дата сборки:</strong>
+                <span id="current-date"></span>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer fade-in">
+            <p>© 2025 MultiLanguage Site. All rights reserved.</p>
+        </footer>
     </div>
 
     <script>
+        // Add current date
         document.getElementById('current-date').textContent = new Date().toLocaleDateString();
+        
+        // Add fade-in animation to all cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.fade-in');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
     </script>
 </body>
 </html>

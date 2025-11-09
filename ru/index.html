@@ -3,44 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Многоязычный сайт</title>
+    <title>Многоязычный сайт - Русская версия</title>
     <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="header">
-        <h1>🌐 Многоязычный сайт</h1>
-        <p>Русская версия</p>
-    </div>
+    <div class="container">
+        <!-- Hero Section -->
+        <header class="hero fade-in">
+            <h1>🌐 Многоязычная Платформа</h1>
+            <p>Добро пожаловать на русскую версию сайта</p>
+        </header>
 
-    <div class="nav-menu">
-        <ul>
-            <li><a href="../index.html" class="nav-button">🏠 Главная страница</a></li>
-            <li><a href="../eng/" class="nav-button">🇺🇸 Английская версия</a></li>
-        </ul>
-    </div>
+        <!-- Navigation -->
+        <section class="nav-section">
+            <div class="nav-card fade-in">
+                <h2>🧭 Навигация</h2>
+                <div class="lang-buttons">
+                    <a href="../index.html" class="btn">
+                        🏠 Главная страница
+                    </a>
+                    <a href="../eng/" class="btn btn-secondary">
+                        🇺🇸 Английская версия
+                    </a>
+                </div>
+            </div>
+        </section>
 
-    <div class="version-nav">
-        <a href="../v1.0.0/ru/" class="nav-button">Версия 1.0.0</a>
-        <a href="../v1.1.0/ru/" class="nav-button">Версия 1.1.0</a>
-    </div>
+        <section class="content-grid">
+            <div class="feature-card fade-in">
+                <h2>🎯 О нашем проекте</h2>
+                <p>Это современная многоязычная платформа, разработанная с использованием передовых технологий веб-разработки.</p>
+                
+                <h3 style="margin-top: 2rem; color: var(--primary-color);">🌟 Основные преимущества:</h3>
+                <ul class="feature-list">
+                    <li>Адаптивный дизайн для всех устройств</li>
+                    <li>Интуитивно понятный интерфейс</li>
+                    <li>Поддержка нескольких языков</li>
+                    <li>Регулярные обновления и улучшения</li>
+                </ul>
+            </div>
 
-    <div class="feature-list">
-        <h2>Добро пожаловать на русскую версию сайта!</h2>
-        <p>Это обновленная версия 1.2.0 с новыми возможностями:</p>
-        <ul>
-            <li>Современный дизайн</li>
-            <li>Удобная навигация</li>
-            <li>Адаптивная верстка</li>
-            <li>Быстрая загрузка</li>
-        </ul>
-    </div>
+            <div class="feature-card fade-in">
+                <h2>📊 Технические характеристики</h2>
+                <ul class="feature-list">
+                    <li>Версия: 2.0</li>
+                    <li>Поддержка: HTML5, CSS3, JavaScript</li>
+                    <li>Адаптивность: Mobile First</li>
+                </ul>
+            </div>
+        </section>
 
-    <div class="version-info">
-        <strong>Версия:</strong> 1.2.0 | <strong>Дата сборки:</strong> <span id="current-date"></span>
+        <!-- Version Navigation -->
+        <div class="version-nav fade-in">
+            <h3>📁 Доступные версии</h3>
+            <div class="version-buttons">
+                <a href="../v1.0.0/ru/" class="btn btn-accent">Версия 1.0.0</a>
+                <a href="../v1.1.0/ru/" class="btn btn-accent">Версия 1.1.0</a>
+                <a href="../v1.2.0/ru/" class="btn btn-accent">Версия 1.2.0</a>
+            </div>
+        </div>
+
+        <!-- Version Info -->
+        <div class="version-info fade-in">
+            <div>
+                <strong>Версия:</strong>
+                <span class="version-badge">v2.0</span>
+            </div>
+            <div>
+                <strong>Дата сборки:</strong>
+                <span id="current-date"></span>
+            </div>
+        </div>
     </div>
 
     <script>
         document.getElementById('current-date').textContent = new Date().toLocaleDateString('ru-RU');
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.fade-in');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
     </script>
 </body>
 </html>
