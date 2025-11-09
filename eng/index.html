@@ -3,27 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website - English Version</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 40px; }
-        nav { margin-bottom: 20px; }
-        a { margin-right: 15px; text-decoration: none; color: #0366d6; }
-    </style>
+    <title>Multilingual Site</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <nav>
-        <a href="../index.html">Back to main page</a>
-    </nav>
-    
-    <h1>Welcome to the English version of the website!</h1>
-    <p>This is the main content in English.</p>
-    <p>Current version: <span id="version">1.0.0</span></p>
-    
+    <div class="header">
+        <h1>🌐 Multilingual Site</h1>
+        <p>English Version</p>
+    </div>
+
+    <div class="nav-menu">
+        <a href="../index.html" class="nav-button">🏠 Main Page</a>
+        <a href="../ru/" class="nav-button">🇷🇺 Russian Version</a>
+    </div>
+
+    <div class="feature-list">
+        <h2>Welcome to the English version!</h2>
+        <p>This is updated version 1.1.0 with new features:</p>
+        <ul>
+            <li>🎨 Modern design</li>
+            <li>🧭 Easy navigation</li>
+            <li>📱 Responsive layout</li>
+            <li>🚀 Fast loading</li>
+        </ul>
+    </div>
+
+    <div class="version-info">
+        <strong>Version:</strong> 1.1.0 | <strong>Build date:</strong> <span id="current-date"></span>
+    </div>
+
     <script>
-        // Get version from URL or use default
-        const urlParams = new URLSearchParams(window.location.search);
-        const version = urlParams.get('v') || '1.0.0';
-        document.getElementById('version').textContent = version;
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US');
     </script>
 </body>
 </html>
