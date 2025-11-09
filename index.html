@@ -13,12 +13,14 @@
     </div>
 
     <div class="nav-menu">
-        <a href="/RPP7sem4lab/ru/" class="nav-button">🇷🇺 Русская версия</a>
-        <a href="/RPP7sem4lab/en/" class="nav-button">🇺🇸 English Version</a>
+        <ul>
+            <li><a href="ru/" class="nav-button">🇷🇺 Русская версия</a></li>
+            <li><a href="eng/" class="nav-button">🇺🇸 English Version</a></li>
+        </ul>
     </div>
 
     <div class="feature-list">
-        <h2>Что нового в версии 1.1.0:</h2>
+        <h2>Что нового в версии 1.2.0:</h2>
         <ul>
             <li>🎨 Красивое оформление с CSS</li>
             <li>📱 Адаптивный дизайн</li>
@@ -28,20 +30,20 @@
     </div>
 
     <div class="version-info">
-        <strong>Версия:</strong> 1.1.0 | <strong>Дата:</strong> <span id="current-date"></span>
+        <strong>Версия:</strong> 1.2.0 | <strong>Дата:</strong> <span id="current-date"></span>
     </div>
-
-    <script>
-        // Добавляем текущую дату
-        document.getElementById('current-date').textContent = new Date().toLocaleDateString();
-    </script>
 
     <div class="version-list">
         <h2>Доступные версии:</h2>
         <ul>
-            <li><a href="?v=1.0.0">Версия 1.0.0</a></li>
+            <li><a href="v1.0.0/">Версия 1.0.0</a></li>
+            <li><a href="v1.1.0/">Версия 1.1.0</a></li>
         </ul>
     </div>
+
+    <script>
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString();
+    </script>
 </body>
 </html>
 
