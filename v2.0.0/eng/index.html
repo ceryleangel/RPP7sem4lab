@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multilingual Site - English Version</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <header class="hero fade-in">
+            <h1>🌐 Multilingual Platform</h1>
+            <p>Welcome to the English version of our site</p>
+        </header>
+
+        <!-- Navigation -->
+        <section class="nav-section">
+            <div class="nav-card fade-in">
+                <h2>🧭 Navigation</h2>
+                <div class="lang-buttons">
+                    <a href="../index.html" class="btn">
+                        🏠 Main Page
+                    </a>
+                    <a href="../ru/" class="btn btn-secondary">
+                        🇷🇺 Russian Version
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-grid">
+            <div class="feature-card fade-in">
+                <h2>🎯 About Our Project</h2>
+                <p>This is a modern multilingual platform developed using cutting-edge web technologies.</p>
+                
+                <h3 style="margin-top: 2rem; color: var(--primary-color);">🌟 Key Features:</h3>
+                <ul class="feature-list">
+                    <li>Responsive design for all devices</li>
+                    <li>Intuitive user interface</li>
+                    <li>Multiple language support</li>
+                    <li>Regular updates and improvements</li>
+                </ul>
+            </div>
+
+            <div class="feature-card fade-in">
+                <h2>📊 Technical Specifications</h2>
+                <ul class="feature-list">
+                    <li>Version: 2.0</li>
+                    <li>Support: HTML5, CSS3, JavaScript</li>
+                    <li>Responsiveness: Mobile First</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Version Navigation -->
+        <div class="version-nav fade-in">
+            <h3>📁 Available Versions</h3>
+            <div class="version-buttons">
+                <a href="../v1.0.0/eng/" class="btn btn-accent">Version 1.0.0</a>
+                <a href="../v1.1.0/eng/" class="btn btn-accent">Version 1.1.0</a>
+                <a href="../v1.2.0/eng/" class="btn">Current Version 1.2.0</a>
+            </div>
+        </div>
+
+        <!-- Version Info -->
+        <div class="version-info fade-in">
+            <div>
+                <strong>Version:</strong>
+                <span class="version-badge">v2.0</span>
+            </div>
+            <div>
+                <strong>Build Date:</strong>
+                <span id="current-date"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US');
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.fade-in');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+    </script>
+</body>
+</html>
