@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой сайт - Русская версия</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        nav { margin-bottom: 20px; }
+        a { margin-right: 15px; text-decoration: none; color: #0366d6; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="../index.html">Назад на главную</a>
+    </nav>
+    
+    <h1>Добро пожаловать на русскую версию сайта!</h1>
+    <p>Это основное содержание на русском языке.</p>
+    <p>Текущая версия: <span id="version">1.0</span></p>
+    
+    <script>
+        // Получаем версию из URL или используем дефолтную
+        const urlParams = new URLSearchParams(window.location.search);
+        const version = urlParams.get('v') || '1.0.0';
+        document.getElementById('version').textContent = version;
+    </script>
+</body>
+</html>

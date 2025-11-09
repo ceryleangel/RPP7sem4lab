@@ -1,0 +1,48 @@
+# Название нашего "робота" (workflow)
+name: Deploy to GitHub Pages on Release
+
+# Запускаем робота только когда создается новый релиз
+on:
+  release:
+    types: [published]
+
+# Даем роботу разрешения для работы с содержимым репозитория и страницами
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Шаги, которые выполнит робот
+jobs:
+  build-and-deploy:
+    # Среда выполнения (последняя версия Ubuntu)
+    runs-on: ubuntu-latest
+
+    steps:
+      # Шаг 1: Получить код из репозитория
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Шаг 2: Настроить Node.js (необходим для некоторых инструментов, у нас просто как среда)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      # Шаг 3: Создать структуру папок для новой версии
+      - name: Prepare for release
+        run: |
+          mkdir -p dist
+          cp -r ru eng index.html dist/
+          mkdir -p dist/v${{ github.event.release.tag_name }}
+          cp -r ru eng index.html dist/v${{ github.event.release.tag_name }}/
+
+      # Шаг 4: Скопировать ВСЕ файлы из папки 'dist' в ветку gh-pages
+      - name: Deploy to gh-pages branch
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          # Откуда брать файлы (наша папка dist)
+          branch: gh-pages
+          folder: dist
+          # Очищать папку перед заливкой новых файлов? НЕТ, чтобы старые версии не удалились.
+          clean: false
