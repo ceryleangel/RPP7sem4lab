@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website - English Version</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        nav { margin-bottom: 20px; }
+        a { margin-right: 15px; text-decoration: none; color: #0366d6; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="../index.html">Back to main page</a>
+    </nav>
+    
+    <h1>Welcome to the English version of the website!</h1>
+    <p>This is the main content in English.</p>
+    <p>Current version: <span id="version">1.0.0</span></p>
+    
+    <script>
+        // Get version from URL or use default
+        const urlParams = new URLSearchParams(window.location.search);
+        const version = urlParams.get('v') || '1.0.0';
+        document.getElementById('version').textContent = version;
+    </script>
+</body>
+</html>
